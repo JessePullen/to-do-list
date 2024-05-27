@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 15vw 85vw;
+}
+
+.header {
+    grid-column: 1 / span 2;
+    min-height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: slategray;
+}
+
+.sidebar {
+    background-color: lightsteelblue;
+    min-height: 85vh;
+}
+
+.content {
+    min-height: 85vh;
+    background-color: lightgray;
+}
