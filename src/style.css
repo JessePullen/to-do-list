@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 .container {
@@ -24,4 +25,16 @@
 .content {
     min-height: 85vh;
     background-color: lightgray;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.new-task {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    height: 75px;
+    width: 150px;
+    font-size: 20px;
 }
