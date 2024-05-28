@@ -19,7 +19,29 @@
 
 .sidebar {
     background-color: lightsteelblue;
-    min-height: 85vh;
+    /* min-height: 85vh; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+.home {
+    padding-left: 20px;
+}
+
+.projects {
+    padding-left: 20px;
+}
+
+ul {
+    padding: 0px;
+    list-style-type: none;
+}
+
+li {
+    padding-top: 5px;
 }
 
 .content {
@@ -34,7 +56,14 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    height: 75px;
-    width: 150px;
+    height: 100px;
+    width: 200px;
+    font-size: 30px;
+}
+
+.new-project {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
     font-size: 20px;
 }
