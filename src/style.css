@@ -47,9 +47,6 @@ li {
 .content {
     min-height: 85vh;
     background-color: lightgray;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
 }
 
 .new-task {
@@ -59,6 +56,9 @@ li {
     height: 100px;
     width: 200px;
     font-size: 30px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
 }
 
 .new-project {
@@ -66,4 +66,10 @@ li {
     border: none;
     cursor: pointer;
     font-size: 20px;
+}
+
+.form {
+    height: 100px;
+    width: 100px;
+    background-color: red;
 }
