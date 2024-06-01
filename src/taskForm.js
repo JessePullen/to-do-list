@@ -1,7 +1,17 @@
-const content = document.querySelector('.content');
+let formIsOpen = false;
+
+// Checks if form is open to prevent multiple instances
+function openForm() {
+    if (formIsOpen === false) {
+        newTaskForm();
+        formIsOpen = true;
+    }
+}
 
 // Appends popup form for entering task details
 function newTaskForm() {
+    const content = document.querySelector('.content');
+
     const form = document.createElement('form');
     form.classList.add('form');
     content.appendChild(form);
@@ -45,6 +55,11 @@ function newTaskForm() {
     formBottom.appendChild(dateInput);
     formBottom.appendChild(starredInput);
     formBottom.appendChild(addTask);
+
+    closeButton.addEventListener('click', () => {
+        form.remove();
+        formIsOpen = false
+    });
 }
 
-export { newTaskForm }
+export { openForm }
