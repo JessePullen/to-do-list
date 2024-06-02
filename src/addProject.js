@@ -1,5 +1,6 @@
 let formIsOpen = false;
 
+// Checks if form is open to prevent multiple instances
 function openProjectForm() {
     if (formIsOpen === false) {
         projectForm();
@@ -7,6 +8,7 @@ function openProjectForm() {
     }
 }
 
+// Appends input for adding projects
 function projectForm() {
     const sidebar = document.querySelector('.projects');
     
@@ -35,10 +37,21 @@ function projectForm() {
         cancel.remove();
         formIsOpen = false
     });
+
+    addProject.addEventListener('click', () => {
+        addToProjects(projectInput.value);
+        projectInput.remove();
+        addProject.remove();
+        cancel.remove();
+        formIsOpen = false
+    });
 }
 
-function addProject() {
-
+function addToProjects(projectName) {
+    const sidebar = document.querySelector('.projects');
+    const project = document.createElement('p');
+    project.textContent = projectName;
+    sidebar.append(project);
 }
 
 export { openProjectForm };
