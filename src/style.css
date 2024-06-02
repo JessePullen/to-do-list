@@ -29,12 +29,10 @@
     font-size: 20px;
 }
 
-.home {
-    padding-left: 20px;
-}
-
+.home,
 .projects {
     padding-left: 20px;
+    padding-right: 20px;
 }
 
 ul {
@@ -66,10 +64,12 @@ li {
 .new-project {
     background-color: transparent;
     border: none;
-    cursor: pointer;
     font-size: 20px;
 }
 
+button {
+    cursor: pointer;
+}
 
 /* Form */
 
@@ -110,6 +110,29 @@ li {
     cursor: pointer;
 }
 
-.add-task-button {
-    cursor: pointer;
+/* Sidebar - Projects */
+
+.project-form {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr;
+}
+
+.project-input {
+    grid-column: 1 / span 2;
+}
+
+.add-project-button,
+.cancel-button {
+    grid-row: 2;
+    width: 92.5px;
+    border: solid 1px black;
+}
+
+.add-project-button {
+    background-color: greenyellow;
+}
+
+.cancel-button {
+    background-color: lightcoral;
 }
