@@ -125,7 +125,7 @@ button {
 .add-project-button,
 .cancel-button {
     grid-row: 2;
-    width: 92.5px;
+    width: 133px;
     border: solid 1px black;
 }
 
