@@ -1,7 +1,7 @@
 let formIsOpen = false;
 
 // Checks if form is open to prevent multiple instances
-function openForm() {
+function openTaskForm() {
     if (formIsOpen === false) {
         newTaskForm();
         formIsOpen = true;
@@ -62,4 +62,4 @@ function newTaskForm() {
     });
 }
 
-export { openForm }
+export { openTaskForm }

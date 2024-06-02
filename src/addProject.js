@@ -1,6 +1,6 @@
 let formIsOpen = false;
 
-function addProject() {
+function openProjectForm() {
     if (formIsOpen === false) {
         projectForm();
         formIsOpen = true;
@@ -37,4 +37,8 @@ function projectForm() {
     });
 }
 
-export { addProject };
+function addProject() {
+
+}
+
+export { openProjectForm };

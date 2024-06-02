@@ -1,14 +1,14 @@
 import './style.css';
-import { openForm } from './taskForm';
-import { addProject } from './addProject';
+import { openTaskForm } from './taskForm';
+import { openProjectForm } from './addProject';
 
 const newTaskButton = document.querySelector('.new-task');
 const newProjectButton = document.querySelector('.new-project');
 
 newTaskButton.addEventListener('click', () => {
-    openForm();
+    openTaskForm();
 });
 
 newProjectButton.addEventListener('click', () => {
-    addProject();
+    openProjectForm();
 });
