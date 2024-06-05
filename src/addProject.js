@@ -49,7 +49,7 @@ function projectForm() {
 
 function addToProjects(projectName) {
     const sidebar = document.querySelector('.projects');
-    const project = document.createElement('p');
+    const project = document.createElement('li');
     project.textContent = projectName;
     sidebar.append(project);
 }

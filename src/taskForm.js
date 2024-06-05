@@ -1,3 +1,5 @@
+import { addTask } from './addTask'
+
 let formIsOpen = false;
 
 // Checks if form is open to prevent multiple instances
@@ -41,9 +43,9 @@ function newTaskForm() {
     const starredInput = document.createElement('input');
     starredInput.setAttribute('type', 'checkbox');
 
-    const addTask = document.createElement('button');
-    addTask.textContent = 'Add Task +';
-    addTask.classList.add('add-task-button');
+    const addTaskButton = document.createElement('button');
+    addTaskButton.textContent = 'Add Task +';
+    addTaskButton.classList.add('add-task-button');
     
     form.appendChild(closeButton);
     form.appendChild(nameLabel);
@@ -54,7 +56,13 @@ function newTaskForm() {
     form.appendChild(formBottom)
     formBottom.appendChild(dateInput);
     formBottom.appendChild(starredInput);
-    formBottom.appendChild(addTask);
+    formBottom.appendChild(addTaskButton);
+
+    addTaskButton.addEventListener('click', () => {
+        const task = addTask(nameInput.value, descriptionInput.value, dateInput.value, starredInput.value);
+        form.remove();
+        formIsOpen = false
+    });
 
     closeButton.addEventListener('click', () => {
         form.remove();
