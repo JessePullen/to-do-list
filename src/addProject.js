@@ -1,3 +1,5 @@
+import { selectList } from "./taskLists";
+
 let formIsOpen = false;
 
 // Checks if form is open to prevent multiple instances
@@ -52,6 +54,7 @@ function addToProjects(projectName) {
     const project = document.createElement('li');
     project.textContent = projectName;
     sidebar.append(project);
+    selectList();
 }
 
 export { openProjectForm };

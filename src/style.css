@@ -42,6 +42,12 @@ ul {
 
 li {
     padding-top: 5px;
+    cursor: pointer;
+}
+
+.active {
+    background-color: slategray;
+    border-radius: 5px;
 }
 
 .content {
