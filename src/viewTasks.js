@@ -16,9 +16,14 @@ function selectList() {
 
 // Displays task information in the content section
 function displayTasks() {
+    const content = document.querySelector('.content');
+
+    // Removes displayed tasks to prevent duplication
+    if (taskList.length > 1) {
+        clearDisplayedTasks();
+    }
+
     for (const list of taskList) {
-        const content = document.querySelector('.content');
-    
         const taskCard = document.createElement('div');
         taskCard.classList.add('task-card');
     
@@ -48,6 +53,14 @@ function displayTasks() {
         taskCard.appendChild(starred);
         taskCard.appendChild(edit);
         taskCard.appendChild(remove);
+    }
+}
+
+// Removes task cards from content section
+function clearDisplayedTasks() {
+    const taskCard = document.querySelectorAll('.task-card');
+    for (const task of taskCard) {
+        task.remove();
     }
 }
 

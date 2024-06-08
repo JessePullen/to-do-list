@@ -1,4 +1,5 @@
 import { addTask, taskList } from './tasks'
+import { displayTasks } from './viewTasks';
 
 let formIsOpen = false;
 
@@ -61,6 +62,7 @@ function newTaskForm() {
     addTaskButton.addEventListener('click', () => {
         const task = addTask(nameInput.value, descriptionInput.value, dateInput.value, starredInput.value);
         taskList.push(task);
+        displayTasks();
         form.remove();
         formIsOpen = false
     });

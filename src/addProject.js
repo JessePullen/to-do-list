@@ -1,4 +1,4 @@
-import { selectList } from "./tasks";
+import { selectList } from "./viewTasks";
 
 let formIsOpen = false;
 
