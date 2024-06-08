@@ -60,7 +60,7 @@ function newTaskForm() {
     formBottom.appendChild(addTaskButton);
 
     addTaskButton.addEventListener('click', () => {
-        const task = addTask(nameInput.value, descriptionInput.value, dateInput.value, starredInput.value);
+        const task = addTask(nameInput.value, descriptionInput.value, dateInput.value, starredInput.checked);
         taskList.push(task);
         displayTasks();
         form.remove();
