@@ -142,3 +142,23 @@ button {
 .cancel-button {
     background-color: lightcoral;
 }
+
+/* Tasks */
+
+.task-card {
+    background-color: white;
+    width: 87.5%;
+    height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 5%;
+    margin-top: 10px;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.card-description {
+    margin-right: auto;
+}

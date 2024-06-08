@@ -1,4 +1,4 @@
-import { selectList } from "./taskLists";
+import { selectList } from "./tasks";
 
 let formIsOpen = false;
 
@@ -50,7 +50,7 @@ function projectForm() {
 }
 
 function addToProjects(projectName) {
-    const sidebar = document.querySelector('.projects');
+    const sidebar = document.querySelector('.projects-menu');
     const project = document.createElement('li');
     project.textContent = projectName;
     sidebar.append(project);

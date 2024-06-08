@@ -1,4 +1,4 @@
-import { addTask } from './addTask'
+import { addTask, taskList } from './tasks'
 
 let formIsOpen = false;
 
@@ -60,6 +60,7 @@ function newTaskForm() {
 
     addTaskButton.addEventListener('click', () => {
         const task = addTask(nameInput.value, descriptionInput.value, dateInput.value, starredInput.value);
+        taskList.push(task);
         form.remove();
         formIsOpen = false
     });
