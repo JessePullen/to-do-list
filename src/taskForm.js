@@ -1,5 +1,6 @@
 import { addTask, taskList } from './tasks'
 import { displayTasks } from './viewTasks';
+import { sortTasks } from './sortTasks';
 
 let formIsOpen = false;
 
@@ -60,9 +61,14 @@ function newTaskForm() {
     formBottom.appendChild(addTaskButton);
 
     addTaskButton.addEventListener('click', () => {
+        // Creates a new task from form inputs
         const task = addTask(nameInput.value, descriptionInput.value, dateInput.value, importantInput.checked);
         taskList.push(task);
-        displayTasks();
+
+        // Keeps current display of sorted tabs
+        const currentList = document.querySelector('.active').textContent;
+        displayTasks(sortTasks(currentList));
+
         form.remove();
         formIsOpen = false
     });

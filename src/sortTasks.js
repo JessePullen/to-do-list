@@ -10,7 +10,7 @@ function sortTasks(parameter) {
     } else if (parameter === 'Important') {
         return taskList.filter(sortImportant);
     } else {
-        return taskList.filter(sortProject);
+        return taskList.filter(sortProject(parameter));
     }
 }
 
@@ -23,7 +23,7 @@ function sortThisWeek(taskList) {
 }
 
 function sortImportant(taskList) {
-    return taskList.important === 'true';
+    return taskList.important === true;
 }
 
 function sortProject(taskList) {

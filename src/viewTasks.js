@@ -1,5 +1,4 @@
 import { sortTasks } from './sortTasks';
-import { taskList } from './tasks'
 
 // Allows task lists to be selected
 function selectList() {
@@ -20,13 +19,10 @@ function selectList() {
 
 // Displays task information in the content section
 function displayTasks(sortedList) {
+    clearDisplayedTasks(sortedList);
+
     const content = document.querySelector('.content');
-
-    // Removes displayed tasks to prevent duplication
-    if (sortedList.length >= 1) {
-        clearDisplayedTasks();
-    }
-
+    
     for (const task of sortedList) {
         const taskCard = document.createElement('div');
         taskCard.classList.add('task-card');
@@ -60,11 +56,13 @@ function displayTasks(sortedList) {
     }
 }
 
-// Removes task cards from content section
-function clearDisplayedTasks() {
-    const taskCard = document.querySelectorAll('.task-card');
-    for (const task of taskCard) {
-        task.remove();
+// Removes task cards from content section to prevent duplicates
+function clearDisplayedTasks(sortedList) {
+    if (sortedList.length > 0) {
+        const taskCard = document.querySelectorAll('.task-card');
+        for (const task of taskCard) {
+            task.remove();
+        }
     }
 }
 
