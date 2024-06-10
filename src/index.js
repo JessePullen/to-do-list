@@ -2,6 +2,7 @@ import './style.css';
 import { openTaskForm } from './taskForm';
 import { openProjectForm } from './addProject';
 import { selectList, displayTasks } from './viewTasks';
+import { taskList } from './tasks';
 
 const newTaskButton = document.querySelector('.new-task');
 const newProjectButton = document.querySelector('.new-project');
@@ -16,5 +17,5 @@ newProjectButton.addEventListener('click', () => {
 
 (function run() {
     selectList();
-    displayTasks();
+    displayTasks(taskList);
 })();

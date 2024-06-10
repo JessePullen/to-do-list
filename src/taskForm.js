@@ -41,8 +41,8 @@ function newTaskForm() {
     const dateInput = document.createElement('input');
     dateInput.setAttribute('type', 'date');
 
-    const starredInput = document.createElement('input');
-    starredInput.setAttribute('type', 'checkbox');
+    const importantInput = document.createElement('input');
+    importantInput.setAttribute('type', 'checkbox');
 
     const addTaskButton = document.createElement('button');
     addTaskButton.textContent = 'Add Task +';
@@ -56,11 +56,11 @@ function newTaskForm() {
     form.appendChild(dateLabel);
     form.appendChild(formBottom)
     formBottom.appendChild(dateInput);
-    formBottom.appendChild(starredInput);
+    formBottom.appendChild(importantInput);
     formBottom.appendChild(addTaskButton);
 
     addTaskButton.addEventListener('click', () => {
-        const task = addTask(nameInput.value, descriptionInput.value, dateInput.value, starredInput.checked);
+        const task = addTask(nameInput.value, descriptionInput.value, dateInput.value, importantInput.checked);
         taskList.push(task);
         displayTasks();
         form.remove();
