@@ -61,12 +61,13 @@ function newTaskForm() {
     formBottom.appendChild(addTaskButton);
 
     addTaskButton.addEventListener('click', () => {
+        const currentList = document.querySelector('.active').textContent;
+
         // Creates a new task from form inputs
-        const task = addTask(nameInput.value, descriptionInput.value, dateInput.value, importantInput.checked);
+        const task = addTask(nameInput.value, descriptionInput.value, dateInput.value, importantInput.checked, currentList);
         taskList.push(task);
 
         // Keeps current display of sorted tabs
-        const currentList = document.querySelector('.active').textContent;
         displayTasks(sortTasks(currentList));
 
         form.remove();

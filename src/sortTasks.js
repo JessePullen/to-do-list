@@ -10,7 +10,7 @@ function sortTasks(parameter) {
     } else if (parameter === 'Important') {
         return taskList.filter(sortImportant);
     } else {
-        return taskList.filter(sortProject(parameter));
+        return taskList.filter(sortProject);
     }
 }
 
@@ -26,8 +26,13 @@ function sortImportant(taskList) {
     return taskList.important === true;
 }
 
+// Checks if task was assigned to a project
 function sortProject(taskList) {
-    return taskList.project === 'test'
+    const lists = ['All Tasks', 'Today', 'This Week', 'Important'];
+    const currentProject = document.querySelector('.active').textContent;
+    if (!lists.includes(taskList.project)) {
+        return taskList.project === currentProject;
+    }
 }
 
 export { sortTasks };

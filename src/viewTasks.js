@@ -19,7 +19,7 @@ function selectList() {
 
 // Displays task information in the content section
 function displayTasks(sortedList) {
-    clearDisplayedTasks(sortedList);
+    clearDisplayedTasks();
 
     const content = document.querySelector('.content');
     
@@ -57,13 +57,11 @@ function displayTasks(sortedList) {
 }
 
 // Removes task cards from content section to prevent duplicates
-function clearDisplayedTasks(sortedList) {
-    if (sortedList.length > 0) {
+function clearDisplayedTasks() {
         const taskCard = document.querySelectorAll('.task-card');
         for (const task of taskCard) {
             task.remove();
         }
-    }
 }
 
 export { selectList, displayTasks };
