@@ -1,3 +1,4 @@
+import { todaysDate, datesThisWeek } from "./dates";
 import { taskList } from "./tasks";
 
 function sortTasks(parameter) {
@@ -15,11 +16,17 @@ function sortTasks(parameter) {
 }
 
 function sortToday(taskList) {
-    return taskList.date === '01/12/2024';
+    return taskList.date === todaysDate();
 }
 
+// Checks if date is within range of a week
 function sortThisWeek(taskList) {
-    return taskList.date === '01/12/2023';
+    const dates = datesThisWeek();
+    
+    for (const date of dates) {
+        if (taskList.date === date)
+            return taskList.date === date;
+    }
 }
 
 function sortImportant(taskList) {

@@ -10,8 +10,8 @@ function addTask(name, description, date, important, project) {
 }
 
 let taskList = [
-    {name:'name', description:'description', date:'01/12/2024', important:true, project:'test'},
-    {name:'name2', description:'description2', date:'01/12/2023', important:false, project:''}
+    {name:'name', description:'description', date:'01-12-2024', important:true, project:'test'},
+    {name:'name2', description:'description2', date:'01-12-2023', important:false, project:''}
 ];
 
 export { addTask, taskList };
