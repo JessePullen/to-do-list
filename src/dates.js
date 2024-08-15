@@ -5,7 +5,9 @@ function formatInputDate(date) {
     const month = date.slice(5, 7);
     const year = date.slice(0, 4);
 
-    return day + '-' + month + '-' + year;
+    if (date !== '') {
+        return day + '-' + month + '-' + year;
+    }
 }
 
 function todaysDate() {

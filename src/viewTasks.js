@@ -1,4 +1,5 @@
 import { sortTasks } from './sortTasks';
+import { removeTask } from './editTask'
 
 // Allows task lists to be selected
 function selectList() {
@@ -38,13 +39,17 @@ function displayTasks(sortedList) {
         date.textContent = task.date;
     
         const important = document.createElement('p');
-        important.textContent = task.important
+        important.textContent = task.important;
     
         const edit = document.createElement('button');
+        edit.classList.add('edit-button');
         edit.textContent = 'edit';
     
         const remove = document.createElement('button');
         remove.textContent = 'remove';
+        remove.addEventListener('click', () => {
+            removeTask(task);
+        });
     
         content.appendChild(taskCard)
         taskCard.appendChild(name);
