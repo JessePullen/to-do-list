@@ -1,5 +1,6 @@
 import { sortTasks } from './sortTasks';
-import { removeTask } from './editTask'
+import { removeTask, editTask } from './editTask'
+import { formatInputDate } from './dates';
 
 // Allows task lists to be selected
 function selectList() {
@@ -36,7 +37,7 @@ function displayTasks(sortedList) {
         description.textContent = task.description;
     
         const date = document.createElement('p');
-        date.textContent = task.date;
+        date.textContent = formatInputDate(task.date);
     
         const important = document.createElement('p');
         important.textContent = task.important;
@@ -44,6 +45,9 @@ function displayTasks(sortedList) {
         const edit = document.createElement('button');
         edit.classList.add('edit-button');
         edit.textContent = 'edit';
+        edit.addEventListener('click', () => {
+            editTask(task);
+        });
     
         const remove = document.createElement('button');
         remove.textContent = 'remove';

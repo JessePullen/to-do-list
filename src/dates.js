@@ -37,4 +37,4 @@ function datesThisWeek() {
 }
 
 
-export { formatInputDate, todaysDate, datesThisWeek};
+export { formatInputDate, todaysDate, datesThisWeek };
