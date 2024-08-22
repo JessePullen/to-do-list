@@ -11,7 +11,7 @@ function formatInputDate(date) {
 }
 
 function todaysDate() {
-    const date = format(new Date(), 'dd-MM-yyyy');
+    const date = format(new Date(), 'yyyy-MM-dd');
 
     return date;
 }
@@ -26,12 +26,12 @@ function datesThisWeek() {
     // Add remaining days to week - cannot add days onto formatted date
     for (let i = 1; i < 7; i++) {
         let date = addDays(today, i);
-        date = format(date, 'dd-MM-yyyy')
+        date = format(date, 'yyyy-MM-dd')
         dates.push(date);
     }
 
     // Format original date before return
-    dates[0] = format(dates[0], 'dd-MM-yyyy');
+    dates[0] = format(dates[0], 'yyyy-MM-dd');
 
     return dates;
 }
