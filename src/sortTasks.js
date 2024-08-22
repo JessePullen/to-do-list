@@ -22,7 +22,7 @@ function sortToday(taskList) {
 // Checks if date is within range of a week
 function sortThisWeek(taskList) {
     const dates = datesThisWeek();
-    
+
     for (const date of dates) {
         if (taskList.date === date)
             return taskList.date === date;

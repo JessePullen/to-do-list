@@ -13,7 +13,7 @@ function openProjectForm() {
 // Appends input for adding projects
 function projectForm() {
     const sidebar = document.querySelector('.projects');
-    
+
     const form = document.createElement('div');
     form.classList.add('project-form');
     sidebar.appendChild(form);

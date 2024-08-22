@@ -25,7 +25,7 @@ function newTaskForm(editing, task) {
     const closeButton = document.createElement('button');
     closeButton.textContent = 'x';
     closeButton.classList.add('close-button');
-    
+
     const nameLabel = document.createElement('label');
     nameLabel.textContent = 'Name';
     const nameInput = document.createElement('input');
@@ -53,7 +53,7 @@ function newTaskForm(editing, task) {
     const saveEditButton = document.createElement('button');
     saveEditButton.textContent = 'Save';
     saveEditButton.classList.add('save-edit-button');
-    
+
     form.appendChild(closeButton);
     form.appendChild(nameLabel);
     form.appendChild(nameInput);
@@ -63,7 +63,7 @@ function newTaskForm(editing, task) {
     form.appendChild(formBottom)
     formBottom.appendChild(dateInput);
     formBottom.appendChild(importantInput);
-    
+
     // Replaces add task button with save edit button
     if (editing === true) {
         formBottom.appendChild(saveEditButton);
@@ -84,7 +84,6 @@ function newTaskForm(editing, task) {
     });
 
     saveEditButton.addEventListener('click', () => {
-
         saveEdit(task);
 
         form.remove();

@@ -33,7 +33,7 @@ function saveEdit(task) {
     const descriptionInput = document.querySelector('.description-input');
     const dateInput = document.querySelector('.date-input');
     const importantInput = document.querySelector('.important-input');
-    
+
     task.name = nameInput.value;
     task.description = descriptionInput.value;
     task.date = dateInput.value;
