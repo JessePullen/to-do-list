@@ -2,7 +2,7 @@ import './style.css';
 import { openTaskForm } from './taskForm';
 import { openProjectForm } from './addProject';
 import { selectList, displayTasks } from './viewTasks';
-import { taskList } from './tasks';
+import { taskList } from './createTask';
 
 const newTaskButton = document.querySelector('.new-task');
 const newProjectButton = document.querySelector('.new-project');

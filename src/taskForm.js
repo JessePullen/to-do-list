@@ -1,19 +1,18 @@
-import { addTask, taskList } from './tasks'
-import { displayTasks } from './viewTasks';
-import { sortTasks } from './sortTasks';
+import { createTask } from './createTask'
+import { saveEdit } from './editTask';
 
 let formIsOpen = false;
 
 // Checks if form is open to prevent multiple instances
-function openTaskForm() {
+function openTaskForm(editing, task) {
     if (formIsOpen === false) {
-        newTaskForm();
+        newTaskForm(editing, task);
         formIsOpen = true;
     }
 }
 
 // Appends popup form for entering task details
-function newTaskForm() {
+function newTaskForm(editing, task) {
     const content = document.querySelector('.content');
 
     const form = document.createElement('form');
@@ -50,6 +49,10 @@ function newTaskForm() {
     const addTaskButton = document.createElement('button');
     addTaskButton.textContent = 'Add Task +';
     addTaskButton.classList.add('add-task-button');
+
+    const saveEditButton = document.createElement('button');
+    saveEditButton.textContent = 'Save';
+    saveEditButton.classList.add('save-edit-button');
     
     form.appendChild(closeButton);
     form.appendChild(nameLabel);
@@ -60,19 +63,16 @@ function newTaskForm() {
     form.appendChild(formBottom)
     formBottom.appendChild(dateInput);
     formBottom.appendChild(importantInput);
-    formBottom.appendChild(addTaskButton);
+    
+    // Replaces add task button with save edit button
+    if (editing === true) {
+        formBottom.appendChild(saveEditButton);
+    } else {
+        formBottom.appendChild(addTaskButton);
+    }
 
     addTaskButton.addEventListener('click', () => {
-        const currentList = document.querySelector('.active').textContent;
-
-        // const formattedDate = formatInputDate(dateInput.value);
-
-        // Creates a new task from form inputs
-        const task = addTask(nameInput.value, descriptionInput.value, dateInput.value, importantInput.checked, currentList);
-        taskList.push(task);
-
-        // Keeps current display of sorted tabs
-        displayTasks(sortTasks(currentList));
+        createTask(nameInput, descriptionInput, dateInput, importantInput);
 
         form.remove();
         formIsOpen = false
@@ -82,6 +82,14 @@ function newTaskForm() {
         form.remove();
         formIsOpen = false
     });
-}
 
+    saveEditButton.addEventListener('click', () => {
+
+        saveEdit(task);
+
+        form.remove();
+        formIsOpen = false
+    });
+
+}
 export { openTaskForm }

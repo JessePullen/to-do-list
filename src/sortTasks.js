@@ -1,5 +1,5 @@
 import { todaysDate, datesThisWeek } from "./dates";
-import { taskList } from "./tasks";
+import { taskList } from "./createTask";
 
 function sortTasks(parameter) {
     if (parameter === 'All Tasks') {
