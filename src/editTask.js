@@ -1,5 +1,5 @@
 import { openTaskForm } from "./taskForm";
-import { taskList } from "./createTask";
+import { saveTasks, taskList } from "./createTask";
 import { displayTasks } from "./viewTasks";
 
 // Removes selected task and displays current tasks
@@ -8,6 +8,7 @@ function removeTask(task) {
 
     taskList.splice(taskPosition, 1);
 
+    saveTasks(taskList);
     displayTasks(taskList);
 }
 
@@ -39,6 +40,7 @@ function saveEdit(task) {
     task.date = dateInput.value;
     task.important = importantInput.checked;
 
+    saveTasks(taskList);
     displayTasks(taskList);
 }
 

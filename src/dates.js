@@ -36,5 +36,4 @@ function datesThisWeek() {
     return dates;
 }
 
-
 export { formatInputDate, todaysDate, datesThisWeek };

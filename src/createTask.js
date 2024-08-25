@@ -6,6 +6,23 @@ let taskList = [
     {name:'name2', description:'description2', date:'2023-12-01', important:false, project:''}
 ];
 
+function saveTasks(taskList) {
+    const tasks = JSON.stringify(taskList);
+    
+    localStorage.setItem(
+        'taskList',
+        tasks
+    )
+}
+
+function getSavedTasks() {
+    const getTaskList = localStorage.getItem('taskList');
+
+    const taskParsed = JSON.parse(getTaskList);
+
+    taskList = taskParsed;
+}
+
 // Stores task information in an object
 function addTask(name, description, date, important, project) {
     return {
@@ -25,8 +42,10 @@ function createTask(name, description, date, important) {
 
     taskList.push(task);
 
+    saveTasks(taskList);
+
     // Keeps current display of sorted tabs
     displayTasks(sortTasks(currentList));
 }
 
-export { taskList, addTask, createTask };
+export { taskList, addTask, createTask, saveTasks, getSavedTasks };
