@@ -6,7 +6,7 @@ let taskList = [
     {name:'name2', description:'description2', date:'2023-12-01', important:false, project:''}
 ];
 
-function saveTasks(taskList) {
+function saveTasks() {
     const tasks = JSON.stringify(taskList);
     
     localStorage.setItem(

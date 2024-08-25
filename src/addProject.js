@@ -40,21 +40,40 @@ function projectForm() {
         formIsOpen = false
     });
 
+    // Add project to list and display if input not empty
     addProject.addEventListener('click', () => {
-        addToProjects(projectInput.value);
-        projectInput.remove();
-        addProject.remove();
-        cancel.remove();
-        formIsOpen = false
+        if (projectInput.value !== '') {
+            projectsList.push(projectInput.value);
+            displayProjects();
+    
+            projectInput.remove();
+            addProject.remove();
+            cancel.remove();
+            formIsOpen = false
+        }
     });
 }
 
-function addToProjects(projectName) {
+let projectsList = ['test'];
+
+function displayProjects() {
+    clearDisplayedProjects();
     const sidebar = document.querySelector('.projects-menu');
-    const project = document.createElement('li');
-    project.textContent = projectName;
-    sidebar.append(project);
+    
+    for (const project of projectsList) {
+        const projectTitle = document.createElement('li');
+        projectTitle.classList.add('project-title');
+        sidebar.append(projectTitle);
+        projectTitle.textContent = project;
+    }
     selectList();
 }
 
-export { openProjectForm };
+function clearDisplayedProjects() {
+    const projectTitle = document.querySelectorAll('.project-title');
+    for (const project of projectTitle) {
+        project.remove();
+    }
+}
+
+export { openProjectForm, displayProjects };
