@@ -20,7 +20,11 @@ function getSavedTasks() {
 
     const taskParsed = JSON.parse(getTaskList);
 
-    taskList = taskParsed;
+    if (taskParsed === null) {
+        taskList = [];
+    } else {
+        taskList = taskParsed;
+    }
 }
 
 // Stores task information in an object
