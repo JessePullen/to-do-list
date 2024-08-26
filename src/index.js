@@ -1,6 +1,6 @@
 import './style.css';
 import { openTaskForm } from './taskForm';
-import { openProjectForm, displayProjects } from './addProject';
+import { openProjectForm, displayProjects, getSavedProjects, saveProjects } from './addProject';
 import { selectList, displayTasks } from './viewTasks';
 import { taskList, saveTasks, getSavedTasks } from './createTask';
 
@@ -17,7 +17,9 @@ newProjectButton.addEventListener('click', () => {
 
 (function run() {
     getSavedTasks();
+    getSavedProjects();
     saveTasks();
+    saveProjects();
     selectList();
     displayTasks(taskList);
     displayProjects();

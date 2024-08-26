@@ -1,3 +1,4 @@
+import { getSavedTasks, taskList } from "./createTask";
 import { selectList } from "./viewTasks";
 
 let formIsOpen = false;
@@ -43,8 +44,9 @@ function projectForm() {
     // Add project to list and display if input not empty
     addProject.addEventListener('click', () => {
         if (projectInput.value !== '') {
-            projectsList.push(projectInput.value);
+            projectList.push(projectInput.value);
             displayProjects();
+            saveProjects();
     
             projectInput.remove();
             addProject.remove();
@@ -54,13 +56,13 @@ function projectForm() {
     });
 }
 
-let projectsList = ['test'];
+let projectList = ['test'];
 
 function displayProjects() {
     clearDisplayedProjects();
     const sidebar = document.querySelector('.projects-menu');
     
-    for (const project of projectsList) {
+    for (const project of projectList) {
         const projectTitle = document.createElement('li');
         projectTitle.classList.add('project-title');
         sidebar.append(projectTitle);
@@ -76,4 +78,25 @@ function clearDisplayedProjects() {
     }
 }
 
-export { openProjectForm, displayProjects };
+function saveProjects() {
+    const projects = JSON.stringify(projectList);
+
+    localStorage.setItem(
+        'projectList',
+        projects
+    )
+}
+
+function getSavedProjects() {
+    const getProjectList = localStorage.getItem('projectList');
+
+    const projectParsed = JSON.parse(getProjectList);
+    
+    if (projectParsed === null) {
+        projectList = [];
+    } else {
+        projectList = projectParsed;
+    }
+}
+
+export { openProjectForm, displayProjects, saveProjects, getSavedProjects };
