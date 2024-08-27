@@ -143,6 +143,17 @@ button {
     background-color: lightcoral;
 }
 
+.project-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.remove-project-button {
+    height: 10px;
+    width: 10px;
+    justify-self: flex-end;
+}
+
 /* Tasks */
 
 .task-card {

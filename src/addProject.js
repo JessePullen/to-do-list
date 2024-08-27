@@ -1,4 +1,3 @@
-import { getSavedTasks, taskList } from "./createTask";
 import { selectList } from "./viewTasks";
 
 let formIsOpen = false;
@@ -65,8 +64,17 @@ function displayProjects() {
     for (const project of projectList) {
         const projectTitle = document.createElement('li');
         projectTitle.classList.add('project-title');
-        sidebar.append(projectTitle);
+        sidebar.appendChild(projectTitle);
         projectTitle.textContent = project;
+
+        const removeButton = document.createElement('button');
+        removeButton.classList.add('project-remove-button');
+        projectTitle.appendChild(removeButton);
+        removeButton.textContent = 'x';
+
+        removeButton.addEventListener('click', () => {
+            removeProject(projectTitle.textContent);
+        });
     }
     selectList();
 }
@@ -97,6 +105,14 @@ function getSavedProjects() {
     } else {
         projectList = projectParsed;
     }
+}
+
+function removeProject(project) {
+    const index = projectList.indexOf(project);
+    projectList.splice(index, 1);
+    
+    saveProjects();
+    displayProjects();
 }
 
 export { openProjectForm, displayProjects, saveProjects, getSavedProjects };
