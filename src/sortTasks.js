@@ -1,6 +1,7 @@
 import { todaysDate, datesThisWeek } from "./dates";
 import { taskList } from "./createTask";
 
+// Displays tasks for selected list or project e.g. important tasks
 function sortTasks(parameter) {
     if (parameter === 'All Tasks') {
         return taskList;

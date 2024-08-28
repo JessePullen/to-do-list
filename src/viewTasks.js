@@ -29,6 +29,10 @@ function displayTasks(sortedList) {
         const taskCard = document.createElement('div');
         taskCard.classList.add('task-card');
 
+        const completeButton = document.createElement('input');
+        completeButton.setAttribute('type', 'checkbox');
+        completeButton.classList.add('complete-button');
+
         const name = document.createElement('p');
         name.textContent = task.name;
 
@@ -56,6 +60,7 @@ function displayTasks(sortedList) {
         });
 
         content.appendChild(taskCard)
+        taskCard.appendChild(completeButton);
         taskCard.appendChild(name);
         taskCard.appendChild(description);
         taskCard.appendChild(date);
