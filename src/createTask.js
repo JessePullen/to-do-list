@@ -52,4 +52,13 @@ function createTask(name, description, date, important) {
     displayTasks(sortTasks(currentList));
 }
 
-export { taskList, addTask, createTask, saveTasks, getSavedTasks };
+function completeTask(checked, taskCard) {
+    if (checked === true) {
+        taskCard.style.textDecoration = 'line-through';
+        taskCard.style.textDecorationThickness = '1px';
+    } else {
+        taskCard.style.textDecoration = 'none';
+    }
+}
+
+export { taskList, addTask, createTask, saveTasks, getSavedTasks, completeTask };

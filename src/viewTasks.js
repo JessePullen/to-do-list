@@ -1,6 +1,7 @@
 import { sortTasks } from './sortTasks';
 import { removeTask, editTask } from './editTask'
 import { formatInputDate } from './dates';
+import { completeTask } from './createTask';
 
 // Allows task lists to be selected
 function selectList() {
@@ -29,6 +30,14 @@ function displayTasks(sortedList) {
         const taskCard = document.createElement('div');
         taskCard.classList.add('task-card');
 
+        const completeButton = document.createElement('input');
+        completeButton.setAttribute('type', 'checkbox');
+        completeButton.classList.add('complete-button');
+
+        completeButton.addEventListener('click', () => {
+            completeTask(completeButton.checked, taskCard);
+        });
+
         const name = document.createElement('p');
         name.textContent = task.name;
 
@@ -45,17 +54,20 @@ function displayTasks(sortedList) {
         const edit = document.createElement('button');
         edit.classList.add('edit-button');
         edit.textContent = 'edit';
+
         edit.addEventListener('click', () => {
             editTask(task);
         });
 
         const remove = document.createElement('button');
         remove.textContent = 'remove';
+
         remove.addEventListener('click', () => {
             removeTask(task);
         });
 
         content.appendChild(taskCard)
+        taskCard.appendChild(completeButton);
         taskCard.appendChild(name);
         taskCard.appendChild(description);
         taskCard.appendChild(date);
