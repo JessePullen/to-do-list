@@ -57,6 +57,7 @@ function projectForm() {
 
 let projectList = ['test'];
 
+// Gets projects from projectList and displays clickable li items to go to project
 function displayProjects() {
     clearDisplayedProjects();
     const sidebar = document.querySelector('.projects-menu');
@@ -79,6 +80,7 @@ function displayProjects() {
     selectList();
 }
 
+// Resets displayed projects in case of deletion of displayed project
 function clearDisplayedProjects() {
     const projectTitle = document.querySelectorAll('.project-title');
     for (const project of projectTitle) {
