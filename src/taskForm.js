@@ -22,8 +22,8 @@ function newTaskForm(editing, task) {
     const formBottom = document.createElement('div');
     formBottom.classList.add('form-bottom');
 
-    const closeButton = document.createElement('button');
-    closeButton.textContent = 'x';
+    const closeButton = document.createElement('img');
+    closeButton.src = '/src/assets/close.svg';
     closeButton.classList.add('close-button');
 
     const nameLabel = document.createElement('label');
@@ -89,6 +89,6 @@ function newTaskForm(editing, task) {
         form.remove();
         formIsOpen = false
     });
-
 }
+
 export { openTaskForm }

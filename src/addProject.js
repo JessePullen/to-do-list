@@ -68,10 +68,10 @@ function displayProjects() {
         sidebar.appendChild(projectTitle);
         projectTitle.textContent = project;
 
-        const removeButton = document.createElement('button');
+        const removeButton = document.createElement('img');
+        removeButton.src = '/src/assets/delete.svg';
         removeButton.classList.add('project-remove-button');
         projectTitle.appendChild(removeButton);
-        removeButton.textContent = 'x';
 
         removeButton.addEventListener('click', () => {
             removeProject(projectTitle.textContent);

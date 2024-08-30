@@ -48,19 +48,25 @@ function displayTasks(sortedList) {
         const date = document.createElement('p');
         date.textContent = formatInputDate(task.date);
 
-        const important = document.createElement('p');
-        important.textContent = task.important;
+        const important = document.createElement('img');
+        important.classList.add('important')
+        if (task.important === true) {
+            important.src = '/src/assets/exclamation.svg';
+        } else {
+            important.src = '/src/assets/exclamation-off.svg';
+        }
 
-        const edit = document.createElement('button');
+        const edit = document.createElement('img');
+        edit.src = '/src/assets/edit-note.svg';
         edit.classList.add('edit-button');
-        edit.textContent = 'edit';
 
         edit.addEventListener('click', () => {
             editTask(task);
         });
 
-        const remove = document.createElement('button');
-        remove.textContent = 'remove';
+        const remove = document.createElement('img');
+        remove.src = '/src/assets/delete.svg';
+        remove.classList.add('remove-button')
 
         remove.addEventListener('click', () => {
             removeTask(task);

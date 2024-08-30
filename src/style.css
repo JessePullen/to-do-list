@@ -130,7 +130,6 @@ button {
 }
 
 .close-button {
-    width: 20px;
     position: absolute;
     top: 15px;
     right: 20px;
@@ -141,7 +140,8 @@ button {
     color: var(--black);
 }
 
-label {
+label,
+input {
     color: var(--black);
 }
 
@@ -202,4 +202,13 @@ label {
 
 .card-description {
     margin-right: auto;
+}
+
+.remove-button,
+.edit-button {
+    cursor: pointer;
+}
+
+.important {
+    width: 30px;
 }
