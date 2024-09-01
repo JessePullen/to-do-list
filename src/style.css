@@ -59,7 +59,7 @@ ul {
 }
 
 li {
-    padding-top: 5px;
+    padding: 5px;
     cursor: pointer;
 }
 
@@ -143,6 +143,12 @@ button {
 label,
 input {
     color: var(--black);
+}
+
+.important-div {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
 }
 
 /* Sidebar - Projects */

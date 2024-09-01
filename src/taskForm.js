@@ -42,9 +42,17 @@ function newTaskForm(editing, task) {
     dateInput.setAttribute('type', 'date');
     dateInput.classList.add('date-input');
 
+    const importantLabel = document.createElement('label');
+    importantLabel.textContent = 'Important';    
     const importantInput = document.createElement('input');
     importantInput.setAttribute('type', 'checkbox');
     importantInput.classList.add('important-input');
+
+    // Adds label and checkbox into div at bottom of form
+    const importantDiv = document.createElement('div');
+    importantDiv.classList.add('important-div')
+    importantDiv.appendChild(importantLabel);
+    importantDiv.appendChild(importantInput);
 
     const addTaskButton = document.createElement('button');
     addTaskButton.textContent = 'Add Task +';
@@ -62,7 +70,7 @@ function newTaskForm(editing, task) {
     form.appendChild(dateLabel);
     form.appendChild(formBottom)
     formBottom.appendChild(dateInput);
-    formBottom.appendChild(importantInput);
+    formBottom.appendChild(importantDiv);
 
     // Replaces add task button with save edit button
     if (editing === true) {
