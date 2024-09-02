@@ -218,3 +218,14 @@ input {
 .important {
     width: 30px;
 }
+
+.task-card > input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    appearance: none;
+    background-image: url('/src/assets/radio-unchecked.svg');
+  }
+
+.task-card > input[type="checkbox"]:checked{
+    background-image: url('/src/assets/task-complete.svg');
+  }
