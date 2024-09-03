@@ -33,9 +33,10 @@ function displayTasks(sortedList) {
         const completeButton = document.createElement('input');
         completeButton.setAttribute('type', 'checkbox');
         completeButton.classList.add('complete-button');
+        completeButton.checked = task.completed;
 
         completeButton.addEventListener('click', () => {
-            completeTask(completeButton.checked, taskCard);
+            completeTask(completeButton.checked, task);
         });
 
         const name = document.createElement('p');

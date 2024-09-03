@@ -219,7 +219,7 @@ input {
     width: 30px;
 }
 
-.task-card > input[type="checkbox"] {
+.task-card input[type="checkbox"] {
     width: 25px;
     height: 25px;
     appearance: none;
@@ -228,4 +228,9 @@ input {
 
 .task-card > input[type="checkbox"]:checked{
     background-image: url('/src/assets/task-complete.svg');
+  }
+
+.task-card:has(input[type="checkbox"]:checked) {
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
   }

@@ -2,8 +2,8 @@ import { displayTasks } from './viewTasks';
 import { sortTasks } from './sortTasks';
 
 let taskList = [
-    {name:'name', description:'description', date:'2024-12-01', important:true, project:'test'},
-    {name:'name2', description:'description2', date:'2023-12-01', important:false, project:''}
+    {completed: false, name:'name', description:'description', date:'2024-12-01', important:true, project:'test'},
+    {completed: true,  name:'name2', description:'description2', date:'2023-12-01', important:false, project:''}
 ];
 
 function saveTasks() {
@@ -30,6 +30,7 @@ function getSavedTasks() {
 // Stores task information in an object
 function addTask(name, description, date, important, project) {
     return {
+        completed,
         name,
         description,
         date,
@@ -52,13 +53,13 @@ function createTask(name, description, date, important) {
     displayTasks(sortTasks(currentList));
 }
 
-function completeTask(checked, taskCard) {
+function completeTask(checked, task) {
     if (checked === true) {
-        taskCard.style.textDecoration = 'line-through';
-        taskCard.style.textDecorationThickness = '1px';
+        task.completed = true;
     } else {
-        taskCard.style.textDecoration = 'none';
+        task.completed = false;
     }
+    saveTasks();
 }
 
 export { taskList, addTask, createTask, saveTasks, getSavedTasks, completeTask };
