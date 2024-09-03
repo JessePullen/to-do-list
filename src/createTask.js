@@ -29,6 +29,7 @@ function getSavedTasks() {
 
 // Stores task information in an object
 function addTask(name, description, date, important, project) {
+    let completed = false;
     return {
         completed,
         name,
