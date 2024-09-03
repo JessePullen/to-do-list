@@ -26,7 +26,7 @@ function datesThisWeek() {
     // Add remaining days to week - cannot add days onto formatted date
     for (let i = 1; i < 7; i++) {
         let date = addDays(today, i);
-        date = format(date, 'yyyy-MM-dd')
+        date = format(date, 'yyyy-MM-dd');
         dates.push(date);
     }
 

@@ -2,8 +2,8 @@ import { displayTasks } from './viewTasks';
 import { sortTasks } from './sortTasks';
 
 let taskList = [
-    {completed: false, name:'name', description:'description', date:'2024-12-01', important:true, project:'test'},
-    {completed: true,  name:'name2', description:'description2', date:'2023-12-01', important:false, project:''}
+    {completed: false, name:'Study', description:'', date:'2024-12-01', important:true, project:''},
+    {completed: true,  name:'Create app', description:'To Do List app', date:'2024-09-03', important:false, project:'To Do List'}
 ];
 
 function saveTasks() {

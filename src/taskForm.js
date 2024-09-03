@@ -50,7 +50,7 @@ function newTaskForm(editing, task) {
 
     // Adds label and checkbox into div at bottom of form
     const importantDiv = document.createElement('div');
-    importantDiv.classList.add('important-div')
+    importantDiv.classList.add('important-div');
     importantDiv.appendChild(importantLabel);
     importantDiv.appendChild(importantInput);
 
@@ -68,7 +68,7 @@ function newTaskForm(editing, task) {
     form.appendChild(descriptionLabel);
     form.appendChild(descriptionInput);
     form.appendChild(dateLabel);
-    form.appendChild(formBottom)
+    form.appendChild(formBottom);
     formBottom.appendChild(dateInput);
     formBottom.appendChild(importantDiv);
 
@@ -83,19 +83,19 @@ function newTaskForm(editing, task) {
         createTask(nameInput, descriptionInput, dateInput, importantInput);
 
         form.remove();
-        formIsOpen = false
+        formIsOpen = false;
     });
 
     closeButton.addEventListener('click', () => {
         form.remove();
-        formIsOpen = false
+        formIsOpen = false;
     });
 
     saveEditButton.addEventListener('click', () => {
         saveEdit(task);
 
         form.remove();
-        formIsOpen = false
+        formIsOpen = false;
     });
 }
 

@@ -37,7 +37,7 @@ function projectForm() {
         projectInput.remove();
         addProject.remove();
         cancel.remove();
-        formIsOpen = false
+        formIsOpen = false;
     });
 
     // Add project to list and display if input not empty
@@ -50,12 +50,12 @@ function projectForm() {
             projectInput.remove();
             addProject.remove();
             cancel.remove();
-            formIsOpen = false
+            formIsOpen = false;
         }
     });
 }
 
-let projectList = ['test'];
+let projectList = ['To Do List'];
 
 // Gets projects from projectList and displays clickable li items to go to project
 function displayProjects() {

@@ -25,8 +25,9 @@ function sortThisWeek(taskList) {
     const dates = datesThisWeek();
 
     for (const date of dates) {
-        if (taskList.date === date)
+        if (taskList.date === date) {
             return taskList.date === date;
+        }
     }
 }
 

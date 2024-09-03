@@ -1,5 +1,5 @@
 import { sortTasks } from './sortTasks';
-import { removeTask, editTask } from './editTask'
+import { removeTask, editTask } from './editTask';
 import { formatInputDate } from './dates';
 import { completeTask } from './createTask';
 
@@ -67,7 +67,7 @@ function displayTasks(sortedList) {
 
         const remove = document.createElement('img');
         remove.src = '/src/assets/delete.svg';
-        remove.classList.add('remove-button')
+        remove.classList.add('remove-button');
 
         remove.addEventListener('click', () => {
             removeTask(task);
