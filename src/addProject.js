@@ -69,7 +69,7 @@ function displayProjects() {
         projectTitle.textContent = project;
 
         const removeButton = document.createElement('img');
-        removeButton.src = '/src/assets/delete.svg';
+        removeButton.src = '../src/assets/delete.svg';
         removeButton.classList.add('project-remove-button');
         projectTitle.appendChild(removeButton);
 

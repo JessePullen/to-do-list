@@ -52,13 +52,13 @@ function displayTasks(sortedList) {
         const important = document.createElement('img');
         important.classList.add('important')
         if (task.important === true) {
-            important.src = '/src/assets/exclamation.svg';
+            important.src = '../src/assets/exclamation.svg';
         } else {
-            important.src = '/src/assets/exclamation-off.svg';
+            important.src = '../src/assets/exclamation-off.svg';
         }
 
         const edit = document.createElement('img');
-        edit.src = '/src/assets/edit-note.svg';
+        edit.src = '../src/assets/edit-note.svg';
         edit.classList.add('edit-button');
 
         edit.addEventListener('click', () => {
@@ -66,7 +66,7 @@ function displayTasks(sortedList) {
         });
 
         const remove = document.createElement('img');
-        remove.src = '/src/assets/delete.svg';
+        remove.src = '../src/assets/delete.svg';
         remove.classList.add('remove-button');
 
         remove.addEventListener('click', () => {
