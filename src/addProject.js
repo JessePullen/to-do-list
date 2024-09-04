@@ -103,7 +103,7 @@ function getSavedProjects() {
     const projectParsed = JSON.parse(getProjectList);
     
     if (projectParsed === null) {
-        projectList = [];
+        projectList = projectList;
     } else {
         projectList = projectParsed;
     }

@@ -21,7 +21,7 @@ function getSavedTasks() {
     const taskParsed = JSON.parse(getTaskList);
 
     if (taskParsed === null) {
-        taskList = [];
+        taskList = taskList;
     } else {
         taskList = taskParsed;
     }
