@@ -23,7 +23,7 @@ function newTaskForm(editing, task) {
     formBottom.classList.add('form-bottom');
 
     const closeButton = document.createElement('img');
-    closeButton.src = './assets/close.svg';
+    closeButton.src = '/src/assets/close.svg';
     closeButton.classList.add('close-button');
 
     const nameLabel = document.createElement('label');

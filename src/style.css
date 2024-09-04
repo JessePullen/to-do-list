@@ -223,11 +223,11 @@ input {
     width: 25px;
     height: 25px;
     appearance: none;
-    background-image: url('./assets/radio-unchecked.svg');
+    background-image: url('/src/assets/radio-unchecked.svg');
   }
 
 .task-card > input[type="checkbox"]:checked{
-    background-image: url('./assets/task-complete.svg');
+    background-image: url('/src/assets/task-complete.svg');
   }
 
 .task-card:has(input[type="checkbox"]:checked) {
