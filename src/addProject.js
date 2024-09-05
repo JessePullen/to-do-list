@@ -1,4 +1,5 @@
 import { selectList } from "./viewTasks";
+import deleteIcon from './assets/delete.svg';
 
 let formIsOpen = false;
 
@@ -69,7 +70,7 @@ function displayProjects() {
         projectTitle.textContent = project;
 
         const removeButton = document.createElement('img');
-        removeButton.src = '../src/assets/delete.svg';
+        removeButton.src = deleteIcon;
         removeButton.classList.add('project-remove-button');
         projectTitle.appendChild(removeButton);
 

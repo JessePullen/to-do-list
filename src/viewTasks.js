@@ -2,6 +2,10 @@ import { sortTasks } from './sortTasks';
 import { removeTask, editTask } from './editTask';
 import { formatInputDate } from './dates';
 import { completeTask } from './createTask';
+import importantImg from './assets/exclamation.svg';
+import importantImgOff from './assets/exclamation-off.svg';
+import editImg from './assets/edit-note.svg';
+import deleteImg from './assets/delete.svg';
 
 // Allows task lists to be selected
 function selectList() {
@@ -52,13 +56,13 @@ function displayTasks(sortedList) {
         const important = document.createElement('img');
         important.classList.add('important')
         if (task.important === true) {
-            important.src = '../src/assets/exclamation.svg';
+            important.src = importantImg;
         } else {
-            important.src = '../src/assets/exclamation-off.svg';
+            important.src = importantImgOff;
         }
 
         const edit = document.createElement('img');
-        edit.src = '../src/assets/edit-note.svg';
+        edit.src = editImg;
         edit.classList.add('edit-button');
 
         edit.addEventListener('click', () => {
@@ -66,7 +70,7 @@ function displayTasks(sortedList) {
         });
 
         const remove = document.createElement('img');
-        remove.src = '../src/assets/delete.svg';
+        remove.src = deleteImg;
         remove.classList.add('remove-button');
 
         remove.addEventListener('click', () => {

@@ -1,5 +1,6 @@
 import { createTask } from './createTask'
 import { saveEdit } from './editTask';
+import closeImg from './assets/close.svg';
 
 let formIsOpen = false;
 
@@ -23,7 +24,7 @@ function newTaskForm(editing, task) {
     formBottom.classList.add('form-bottom');
 
     const closeButton = document.createElement('img');
-    closeButton.src = '/src/assets/close.svg';
+    closeButton.src = closeImg;
     closeButton.classList.add('close-button');
 
     const nameLabel = document.createElement('label');
